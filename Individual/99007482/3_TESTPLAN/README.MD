@@ -1,9 +1,10 @@
 # TEST PLAN
 
 ## HIGH LEVEL TESTPLAN
-
-1.	Touch sensor should rotate the mirror right and left as per the driver’s instruction
-2.	The button to fold the mirror should be in middle by default 
+|S.NO|REQUIREMENTS|
+|----|------------|
+|1|Touch sensor should rotate the mirror right and left as per the driver’s instruction|
+|2|The button to fold the mirror should be in middle by default| 
 
 ## LOW LEVEL TESTPLAN
 
