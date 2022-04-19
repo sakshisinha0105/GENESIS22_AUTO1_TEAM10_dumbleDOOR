@@ -106,7 +106,7 @@ Now it is an estimation that in upcoming years we can expect vehicle having inte
 |3|HLR2|The mirror should unfold when the electronic button is pressed down|
 |4|HLR2|The mirror should fold when the electronic button is pressed up|
 
-
+------------------------------------------------------------------------------------------------------------------------------------
 
 
 
