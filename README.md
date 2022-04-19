@@ -7,6 +7,6 @@
 |Sl.No|     Name         |PS No      | Individual Project                              |            
 | --- | ---------------- | :-------: | ---------------------------------------------- |  
 | 1. | Yogesh .S.V       | 99007456 |                             |                    
-| 2. | Tanmay Padhi | 99007482 |          |  
+| 2. | Tanmay Padhi | 99007482 |Auto Folder Mirror Sliding Model|  
 | 3. | Aman Sharma       | 99007484 |          |   
 | 4. | Sakshi Sinha   | 99007560 |                                 |  
