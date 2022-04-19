@@ -1,7 +1,8 @@
-# DOOR LOCKING SYSTEM
+# INTEGRATED MODEL
+## DOOR LOCKING SYSTEM
 
-## Made by Aman Sharma
-## 99007484
+### Made by Aman Sharma
+### 99007484
 
 ## REQUIREMENTS
 
@@ -57,9 +58,9 @@ Other cars have a proximity system that is triggered if a keylike transducer (Ad
 
 
 
-# AUTO FOLD MIRROR SLIDING MODEL
-## Made by Tanmay Padhi
-## 99007482
+## AUTO FOLD MIRROR SLIDING MODEL
+### Made by Tanmay Padhi
+### 99007482
 
 ## REQUIREMENTS
 
