@@ -1,5 +1,7 @@
 # DOOR LOCKING SYSTEM
 
+## Made by Aman Sharma
+## 99007484
 
 ## REQUIREMENTS
 
@@ -53,7 +55,11 @@ Other cars have a proximity system that is triggered if a keylike transducer (Ad
 |----|--------------------|
 |3.1 |The doors of the car should auto-lock when the car is at a particular speed.
 
+
+
 # AUTO FOLD MIRROR SLIDING MODEL
+## Made by Tanmay Padhi
+## 99007482
 
 ## REQUIREMENTS
 
