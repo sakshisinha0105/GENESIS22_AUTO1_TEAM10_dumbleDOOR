@@ -1,7 +1,8 @@
 # DOOR LOCKING SYSTEM
 
-## Made by Aman Sharma
-## 99007484
+ Made by Aman Sharma
+ 
+ 99007484
 
 ## REQUIREMENTS
 
@@ -58,8 +59,9 @@ Other cars have a proximity system that is triggered if a keylike transducer (Ad
 
 
 # AUTO FOLD MIRROR SLIDING MODEL
-## Made by Tanmay Padhi
-## 99007482
+Made by Tanmay Padhi
+
+99007482
 
 ## REQUIREMENTS
 
@@ -105,8 +107,10 @@ Now it is an estimation that in upcoming years we can expect vehicle having inte
 |3|HLR2|The mirror should unfold when the electronic button is pressed down|
 |4|HLR2|The mirror should fold when the electronic button is pressed up|
 
-# WINDOW SYSTEM 
+## WINDOW SYSTEM 
+Made by Sakshi Sinha
 
+99007560
 
 ## REQUIREMENTS
 
