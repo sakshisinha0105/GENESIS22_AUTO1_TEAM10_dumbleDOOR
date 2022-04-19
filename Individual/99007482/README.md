@@ -23,4 +23,21 @@ Over the years, the mirror has been transformed from manual control to electroni
 After 2010, there were many vehicles which enabled the electronic button to fold and unfold the mirror once the vehicle is turned on. Later few vehicles also gave the touch screen at the driver door which enables them to adjust the view as per their requirements. Like in the Maruti Suzuki Swift, there was manual setting along with the joystick till 2015, later models however included the electronic folding system, however the mirror adjustment is still done manually by the person driving the vehicle
 Now it is an estimation that in upcoming years we can expect vehicle having intelligence sensor which will automatically detect the blind spot and adjust the mirror as per the driver without having any human intervention. In Tesla Model S, if you are driving for the first time, it asks about the personal information of the driver and next time it automatically sets the driver seat and side mirrors as the driver used it the last time used. 
 
+# TEST PLAN
+
+## HIGH LEVEL TESTPLAN
+|S.NO|TESTPLAN|
+|----|--------|
+|1|Touch sensor should rotate the mirror right and left as per the driver’s instruction|
+|2|The button to fold the mirror should be in middle by default| 
+
+## LOW LEVEL TESTPLAN
+|S.NO|HIGH LEVEL REFERENCE|TESTPLAN|
+|----|--------------------|--------|
+|1|HLR1|The mirror should rotate right when the user slides towards right in touch sensor|
+|2|HLR1|The mirror should rotate left when the user slides towards left in touch sensor|
+|3|HLR2|The mirror should unfold when the electronic button is pressed down|
+|4|HLR2|The mirror should fold when the electronic button is pressed up|
+
+
 
