@@ -1,8 +1,19 @@
-<h1 align="center"> Mobile missile system for VVIP </h1>
-<i><h3 align = "center"> Your pocket missile </h3></i>
+<h1 align="center"> Mobile missile system </h1>
+<i><h3 align = "center"> Pocket missile system for your car </h3></i>
 
-![](https://github.com/Y-133/GENESIS22_AUTO1_TEAM10_dumbleDOOR/blob/main/Individual/99007456/IMAGES/missile%20car.jpg)
-
+<p align = "center">  
+  <img src="https://github.com/Y-133/GENESIS22_AUTO1_TEAM10_dumbleDOOR/blob/main/Individual/99007456/IMAGES/missile%20car.jpg" alt="car with missile system"> </p>
+#
+--------------------------------------------------------------
+## Features:
+1) Launch missile
+2) Lock on target
+3) View the availability of the missiles
+4) System functioning data 
+5) Auto reload of the missiles
+6) Control the missile pointer using the joystick like controler on the steering wheel 
+7) Auto detach of system when in danger/damaged
+8) Free release of missile 
 #
 # REQUIREMENTS
 
@@ -12,22 +23,22 @@
 | :----: |------------|
 | HLR_1 | Initilaize the missile system |
 | HLR_2 | Open the missile holder in the door |
-| HLR_3 | Fix the target manually |
+| HLR_3 | Fix the target manually using the joystick |
 | HLR_4 | Launch the missile |
 #
 ## LOW LEVEL REQUIREMENTS
 
 | HLR_ID | LLR_ID | LOW LEVEL REQUIREMENTS|
 | :------: | :------: | ----------------------- | 
-| HLR_1 | LLR_1.1 | Power the system using the batteries | 
-| | LLR_1.2 | Check the system working or not | 
+| HLR_1 | LLR_1.1 | Power the missile system using the batteries | 
+| | LLR_1.2 | Check the system working or not using sensor | 
 |  | LLR_1.3| Check the missiles availability | 
 | | LLR_1.4| Display the information in the dasboard | 
 | HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor | 
 | | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving | 
 | | LLR2.3 | Closing the holder opening if crash is detected | 
 | HLR_3 | LLR3.1 | Fix the target using the camera feed displayed in the dashboard|
-| | LLR_3.2 |Use the joysticks in the steering to fix the target | 
+| | LLR_3.2 |Use the joysticks in the steering to move the missile holder position to some degree | 
 | | LLR_3.3 | Choose the target | 
 | HLR_4| LLR_4.1| Fire the missiles | 
 | | LLR_4.2 | Check for the missile availability |
