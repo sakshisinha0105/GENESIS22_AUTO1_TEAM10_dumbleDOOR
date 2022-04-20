@@ -28,12 +28,13 @@
 #
 ## LOW LEVEL REQUIREMENTS
 
-| HLR_ID | LLR_ID | LOW LEVEL REQUIREMENTS|
+| HLR_ID   | LLR_ID   | LOW LEVEL REQUIREMENTS  |
 | :------: | :------: | ----------------------- | 
-| HLR_1 | LLR_1.1 | Power the missile system using the batteries | 
-| | LLR_1.2 | Check the system working or not using sensor | 
-|  | LLR_1.3| Check the missiles availability | 
-| | LLR_1.4| Display the information in the dasboard | 
+| HLR_1 | LLR_1.1 | Check the power in the battery | 
+| | LLR_1.2 | Power the missile system using the batteries | 
+| | LLR_1.3 | Check the system working or not using sensor | 
+|  | LLR_1.4 | Check the missiles availability | 
+| | LLR_1.5| Display the information in the dasboard | 
 | HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor | 
 | | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving | 
 | | LLR2.3 | Closing the holder opening if crash is detected | 
