@@ -3,7 +3,7 @@
 
 <p align = "center">  
   <img src="https://github.com/Y-133/GENESIS22_AUTO1_TEAM10_dumbleDOOR/blob/main/Individual/99007456/IMAGES/missile%20car.jpg" alt="car with missile system"> </p>
-#
+
 --------------------------------------------------------------
 ## Features:
 1) Launch missile
