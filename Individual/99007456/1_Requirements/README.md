@@ -14,9 +14,10 @@
 6) Control the missile pointer using the joystick like controler on the steering wheel 
 7) Auto detach of system when in danger/damaged
 8) Free release of missile 
+9) Ethernet bus is used for the camera feed
+10) CAN bus is used of the missile control unit as a whole
 #
 # REQUIREMENTS
-
 ## HIGH LEVEL REQUIREMEMTS
 
 |HLR_ID|REQUIREMENTS|
@@ -30,13 +31,14 @@
 
 | HLR_ID   | LLR_ID   | LOW LEVEL REQUIREMENTS  |
 | :------: | :------: | ----------------------- | 
-| HLR_1 | LLR_1.1 | Check the power in the battery | 
+| HLR_1 | LLR_1.1 | Check the battery health |
+| | LLR_1. | Display the battery status in the digital cluster display | 
 | | LLR_1.2 | Power the missile system using the batteries | 
-| | LLR_1.3 | Check the system working or not using sensor | 
-|  | LLR_1.4 | Check the missiles availability | 
+| | LLR_1.3 | Check the missile system working or not using sensor | 
+|  | LLR_1.4 | Check the missiles availability using weight sensor | 
 | | LLR_1.5| Display the information in the dasboard | 
-| HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor | 
-| | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving | 
+| HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor within 5sec| 
+| | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving using sensor for every 1 ms| 
 | | LLR2.3 | Closing the holder opening if crash is detected | 
 | HLR_3 | LLR3.1 | Fix the target using the camera feed displayed in the dashboard|
 | | LLR_3.2 |Use the joysticks in the steering to move the missile holder position to some degree | 
