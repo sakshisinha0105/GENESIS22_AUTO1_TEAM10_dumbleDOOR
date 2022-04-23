@@ -6,16 +6,17 @@
 
 --------------------------------------------------------------
 ## Features:
-1) Launch missile
-2) Lock on target
-3) View the availability of the missiles
-4) System functioning data 
-5) Auto reload of the missiles
-6) Control the missile pointer using the joystick like controler on the steering wheel 
-7) Auto detach of system when in danger/damaged
-8) Free release of missile 
-9) Ethernet bus is used for the camera feed
-10) CAN bus is used of the missile control unit as a whole
+1) Capacity to hold 5 missile
+2) Launch missile
+3) Lock on target
+4) View the availability of the missiles
+5) System functioning data 
+6) Auto reload of the missiles
+7) Control the missile pointer using the joystick like controler on the steering wheel 
+8) Auto detach of system when in danger/damaged
+9) Free release of missile 
+10) Ethernet bus is used for the camera feed
+11) CAN bus is used of the missile control unit as a whole
 #
 # REQUIREMENTS
 ## HIGH LEVEL REQUIREMEMTS
@@ -26,27 +27,33 @@
 | HLR_2 | Open the missile holder in the door |
 | HLR_3 | Fix the target manually using the joystick |
 | HLR_4 | Launch the missile |
+| HLR_5| Auto detach when the system is damaged| 
 #
 ## LOW LEVEL REQUIREMENTS
 
 | HLR_ID   | LLR_ID   | LOW LEVEL REQUIREMENTS  |
 | :------: | :------: | ----------------------- | 
-| HLR_1 | LLR_1.1 | Check the battery health |
-| | LLR_1. | Display the battery status in the digital cluster display | 
-| | LLR_1.2 | Power the missile system using the batteries | 
-| | LLR_1.3 | Check the missile system working or not using sensor | 
-|  | LLR_1.4 | Check the missiles availability using weight sensor | 
-| | LLR_1.5| Display the information in the dasboard | 
-| HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor within 5sec| 
-| | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving using sensor for every 1 ms| 
-| | LLR2.3 | Closing the holder opening if crash is detected | 
-| HLR_3 | LLR3.1 | Fix the target using the camera feed displayed in the dashboard|
+| HLR_1 | LLR_1.1 | When the car is turned on the software shall check the battery health and charge level |
+| | LLR_1. | The battery health and charge level status shall be displayed in the digital cluster display | 
+| | LLR_1.2 | The missile system shall be powered using the batteries when the car is turned on irrespective of engine on/off  | 
+| | LLR_1.3 | The software checks the missile system health by checking the if the current flow completes in the system to the system | 
+|  | LLR_1.4 | Check the missiles availability using weight sensor in each missile holder| 
+| | LLR_1.5| Display the information in the digital cluster | 
+| HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor within 5 second| 
+| | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving using sensor for every 1 millisecond| 
+| | LLR_2.3 | Closing the missile holder opened if any crash is detected in either front or sideward | 
+| HLR_3 | LLR3.1 | Fix the target using the camera feed displayed on the overhead unit screen|
 | | LLR_3.2 |Use the joysticks in the steering to move the missile holder position to some degree | 
-| | LLR_3.3 | Choose the target | 
-| HLR_4| LLR_4.1| Fire the missiles | 
-| | LLR_4.2 | Check for the missile availability |
-| | LLR_4.3| Display the missile availability in the dasboard |
-
+| | LLR_3.3 | Lock on the target using the lock push button |
+| | LLR_3.4 | The stepper motor holds its position | 
+| HLR_4| LLR_4.1| The missile is fired using the compressed air technology when the fire button is pressed | 
+| | LLR_4.2 |The missile availability is checked after every launch |
+| | LLR_4.3| Missile availability is updated and displayed in the dasboard after every launch |
+| | LLR_4.4| When the fire button is pressed again the next consecutive missile in the system is fired |
+| | LLR_4.5| When the missiles are below 3, warn the user with continuous beep and red light when in missile system mode|    
+| HLR_5| LLR_5.1| The system alerts the user with different continuous beep for 7 seconds to warn the user when the missile system is damaged|
+| | LLR_5.2 | The missile system gets detached automattically when the system damaged badly using the air pressure|
+| | LLR_5.3| The missile system can also be detached mannually when the detach button is pressed|  
 -------------------------------------------------------------------------
 # Market Analysis
 <p align="center">
