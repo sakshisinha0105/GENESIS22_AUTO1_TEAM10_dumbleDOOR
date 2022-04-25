@@ -102,6 +102,11 @@ But the propsed system targets the commerially produced vehicles for the VVIP / 
 -------------------------------------------------------------------------
 what to do if the sensor gives garbage value??
 
-
+---------------------------------------------------------------------------------
+## Vehicle architecture:
+<p align = "center">  
+  <img src="https://github.com/sakshisinha0105/GENESIS22_AUTO1_TEAM10_dumbleDOOR/blob/17f23d64617f7fc3934ba0a42c45e2354e60fe8b/Individual/99007456/images/missile_sys_archi.jpg" alt="Missile system architecture"> </p>
+  
+---------------------------------------------------------
 ## REFERENCE: 
 1) https://en.wikipedia.org/wiki/M1128_Mobile_Gun_System
