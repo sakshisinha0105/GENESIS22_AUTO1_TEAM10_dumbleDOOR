@@ -6,16 +6,16 @@
 
 |S.NO|REQUIREMENTS|
 |----|------------|
-|HLR1 |A key fob is required |
-|HLR2 |A toggle switch is required |
-|HLR3 |Auto-lock the doors when moving |
+|HLR1 |A transmitter - reciever module is required  |
+|HLR2 |A toggle switch is required to unlock/lock the doors |
+|HLR3 |Doors should auto-lock when the car is moving |
 
 ### LOW LEVEL REQUIREMENTS
 
 |S.NO|REQUIREMENTS|
 |----|--------------------|
-|LLR1.1 |A key is required to lock/unlock the car manually. |
-|LLR1.1 |A key fob is required to lock/unlock the car using buttons |
+|LLR1.1 |A transmitter gives the command to unlock/lock the doors. |
+|LLR1.2 |A reciever takes the command to unlock/lock the doors |
 |LLR2.1 |A toggle switch is required on the door to lock/unlock the doors of the car |
 |LLR3.1 |The doors of the car should auto-lock when the car is at a particular speed |
 
