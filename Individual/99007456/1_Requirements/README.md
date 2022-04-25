@@ -88,7 +88,7 @@ But the propsed system targets the commerially produced vehicles for the VVIP / 
 | :-------------------: | :------------------: | :-------------------: | :--------: | :---------: |:-------------: | :--------------: |
 | H_01 | L_01.1 | Power the system using the batteries when the car is turned on using the key | Turning on / off the system using key for multiple times |  |  | Mannual  | 
 | | LLR_1.2 | Check the system working or not | Turning on / off the system using key for multiple times | |  | Mannual | 
-| | LLR_1.3| Check the missiles availability using the weight sensor| Checking the sensor output is between 1.7 - 1.75kg  | | | | 
+| | LLR_1.3| Check the missiles availability using the weight sensor| Checking the sensor output is between 3.1mV - 3.3mV  | | | | 
 | | LLR_1.4| Display the information in the dasboard | Checking the dashboard and real missile availability manually | | | | 
 | H_02 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor | Perform repeated turn on/off the system to check the functionality of the holder | | | | 
 | | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving | Test the PIR sensor by hindering its path | | | |
