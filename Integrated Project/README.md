@@ -8,21 +8,21 @@
 
 ### HIGH LEVEL REQUIREMEMTS
 
+
 |S.NO|REQUIREMENTS|
 |----|------------|
-|HLR1 |A key fob is required |
-|HLR2 |A toggle switch is required |
-|HLR3 |Auto-lock the doors when moving |
+|HLR1 |A transmitter - reciever module is required  |
+|HLR2 |A toggle switch is required to unlock/lock the doors |
+|HLR3 |Doors should auto-lock when the car is moving |
 
 ### LOW LEVEL REQUIREMENTS
 
 |S.NO|REQUIREMENTS|
 |----|--------------------|
-|LLR1.1 |A key is required to lock/unlock the car manually. |
-|LLR1.1 |A key fob is required to lock/unlock the car using buttons |
+|LLR1.1 |A transmitter gives the command to unlock/lock the doors. |
+|LLR1.2 |A reciever takes the command to unlock/lock the doors |
 |LLR2.1 |A toggle switch is required on the door to lock/unlock the doors of the car |
 |LLR3.1 |The doors of the car should auto-lock when the car is at a particular speed |
-
 ## Market Analysis
 In 1911, Bosch started supplying ignition switches requiring a key. In 1980, Ford Motor Company introduced an external keypad-type keyless entry system, wherein the driver entered a numeric combination —either pre-programmed at the factory or one programmed by the owner— to unlock the car without the key. Early- to mid-1980s Nissan Maximas could also be installed with a keypad, which would also retract the windows and moonroof once the car was successfully unlocked by pushing a specific button on the keypad. During the 1990s the Subaru Legacy could also be opened by pulling the driver's external door handle a specific number of times to enter a passcode number that would unlock the driver's door only.
 Today, many cars with power door locks also have a radio frequency remote keyless system, which allows a person to press a button on a remote control key fob, the first being available on the French-made Renault Fuego in 1982. Currently, many luxury makers also allow the windows to be opened or closed by pressing and holding a button on the remote control key fob, or by inserting the ignition key and holding it in the lock or unlock position in the external driver's door lock.
