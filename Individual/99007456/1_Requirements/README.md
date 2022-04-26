@@ -35,11 +35,11 @@
 | HLR_ID   | LLR_ID   | LOW LEVEL REQUIREMENTS  |
 | :------: | :------: | ----------------------- | 
 | HLR_1 | LLR_1.1 | When the car is turned on the software shall check the battery health and charge level |
-| | LLR_1. | The battery health and charge level status shall be displayed in the digital cluster display | 
-| | LLR_1.2 | The missile system shall be powered using the batteries when the car is turned on irrespective of engine on/off  | 
-| | LLR_1.3 | The software checks the missile system health by checking the if the current flow completes in the system to the system | 
-|  | LLR_1.4 | Check the missiles availability using weight sensor in each missile holder| 
-| | LLR_1.5| Display the information in the digital cluster | 
+| | LLR_1.2 | The battery health and charge level status shall be displayed in the digital cluster display | 
+| | LLR_1.3 | The missile system shall be powered using the batteries when the car is turned on irrespective of engine on/off  | 
+| | LLR_1.4 | The software checks the missile system health by checking the if the current flow completes in the system to the system | 
+|  | LLR_1.5 | Check the missiles availability using weight sensor in each missile holder| 
+| | LLR_1.6| Display the information in the digital cluster | 
 | HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor within 5 second| 
 | | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving using sensor for every 1 millisecond| 
 | | LLR_2.3 | Closing the missile holder opened if any crash is detected in either front or sideward | 
@@ -86,19 +86,31 @@ But the propsed system targets the commerially produced vehicles for the VVIP / 
 ## TABLE_NO: LL_1 ##
 | **High_leve_Test ID** | **Low_leve_Test ID** | **Description**       | **Exp IN** | **Exp OUT** | **Actual Out** |**Type Of Test**  |    
 | :-------------------: | :------------------: | :-------------------: | :--------: | :---------: |:-------------: | :--------------: |
-| H_01 | L_01.1 | Power the system using the batteries when the car is turned on using the key | Turning on / off the system using key for multiple times |  |  | Mannual  | 
-| | LLR_1.2 | Check the system working or not | Turning on / off the system using key for multiple times | |  | Mannual | 
-| | LLR_1.3| Check the missiles availability using the weight sensor| Checking the sensor output is between 3.1mV - 3.3mV  | | | | 
-| | LLR_1.4| Display the information in the dasboard | Checking the dashboard and real missile availability manually | | | | 
-| H_02 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor | Perform repeated turn on/off the system to check the functionality of the holder | | | | 
-| | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving | Test the PIR sensor by hindering its path | | | |
-| | LLR_2.3 | Closing the holder opening if crash is detected | Test the PIR sensor by hindering its path | | | |
-| | LLR_2.4 | If the door is not opened, deactivate the missile system | | | | 
-| H_03 | LLR3.1 | Fix the target using the camera feed displayed in the dashboard| Test the camera working | | | |
-| | LLR_3.2 |Use the joysticks in the steering to fix the target | Check if the joystick is woking and accurately | | | |
-| H_04| LLR_4.1| Fire the missiles | Checking if the missiles gets detached and fired up | | | |
-| | LLR_4.2 | Check for the missile availability | Check the number using the weight sensor in the holder | | | | 
-| | LLR_4.3| Display the missile availability in the dasboard | Checking the dashboard and real missile availability manually | | | | 
+| HLT_1 | LLT_1.1 | Car shall turn on |  |  |  | Mannual |
+| | LLT_1.2| The software shall check the battery health and charge level | NA | charge level | | |
+| | LLT_1.3 | The battery health and charge level status shall be displayed in the digital cluster display | NA | display the info  in the digitla cluster | | Manual | 
+| | LLT_1.4| If the charge level input isn't showing right | software input | Show the charge status as cross mark | | Manual | 
+| | LLT_1.5 | The missile system shall be powered using the batteries when the car is turned on irrespective of engine on/off  | Power from battery | The system is powered on | | Manual | 
+| | LLT_1.6| If the system is not powered | No power| Show error in the digital cluster| | Manual|
+|  | LLR_1.7 | Check the missiles availability using weight sensor in each missile holder| From load sensor |  | | Manual |  
+| | LLR_1.8| If the sensor value is not in the range of 1.7 - 1.71| Input from the load cell | Check if the missile used count is equal to ecrease the missile number count  |   Display the information in the digital cluster | 
+| HLR_2 | LLR_2.1 | Opening the missile holder to an angle of 45 degree using the stepper variant motor within 5 second| 
+| | LLR_2.2 | Automatic monitoring for any possible crash with the objects while moving using sensor for every 1 millisecond| 
+| | LLR_2.3 | Closing the missile holder opened if any crash is detected in either front or sideward | 
+| HLR_3 | LLR3.1 | Fix the target using the camera feed displayed on the overhead unit screen|
+| | LLR_3.2 |Use the joysticks in the steering to move the missile holder position to some degree | 
+| | LLR_3.3 | Lock on the target using the lock push button |
+| | LLR_3.4 | The stepper motor holds its position | 
+| HLR_4| LLR_4.1| The missile is fired using the compressed air technology when the fire button is pressed | 
+| | LLR_4.2 |The missile availability is checked after every launch |
+| | LLR_4.3| Missile availability is updated and displayed in the dasboard after every launch |
+| | LLR_4.4| When the fire button is pressed again the next consecutive missile in the system is fired |
+| | LLR_4.5| When the missiles are below 3, warn the user with continuous beep and red light when in missile system mode|    
+| HLR_5| LLR_5.1| The system alerts the user with different continuous beep for 7 seconds to warn the user when the missile system is damaged|
+| | LLR_5.2 | The missile system gets detached automattically when the system damaged badly using the air compressor|
+| | LLR_5.3| The missile system can also be detached mannually when the detach button is pressed|  
+| HLR_6| LLR_6.1 | The battery is charged using the dynamo in the four wheels|
+
 -------------------------------------------------------------------------
 what to do if the sensor gives garbage value??
 
