@@ -1,0 +1,25 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  int x;
+}
+
+on message CarSpeedValue
+{
+ x = $Speed;
+ if(x>= 10)
+{
+  
+  setSignal(Doorlock,1);
+}
+else
+{
+  setSignal(Doorlock,0);
+}
+  
+}
