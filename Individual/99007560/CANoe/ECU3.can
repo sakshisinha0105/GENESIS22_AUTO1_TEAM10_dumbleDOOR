@@ -1,0 +1,58 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  timer Timer1;
+  msTimer Timer2;
+  message CarSpeedValue msg1;
+}
+ 
+on start
+{
+  write("Simluation has Started");
+}
+ 
+on key 's'
+{
+  if(@Ignition::KL15==1)
+  {
+    @Ignition::KL15=0;
+  }
+  else
+  {
+    @Ignition::KL15=1;
+  }
+}
+ 
+on sysvar Ignition::KL15
+{
+  if(@Ignition::KL15==0)
+  {
+    write("Ignition is OFF");
+  }
+  else
+  {
+    write("Ignition is ON ");
+    setTimer(Timer1,5);
+    output(msg1);
+  }
+}
+ 
+on timer Timer1
+{
+  setSignal(Speed,8);
+  output(msg1);
+  setTimer(Timer2,5000);
+}
+ 
+on timer Timer2
+{
+  $Speed=40;
+  output(msg1);
+  setTimer(Timer1,5);
+}
+
