@@ -1,0 +1,31 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{timer Timer1;
+  int x;
+}
+
+on message CarSpeed
+{
+ x = $Speed;
+ if(x>= 10)
+{
+  setTimer(Timer1,1);
+}
+else
+{
+  setSignal(Doorlock,0);
+}
+  
+}
+on timer Timer1
+{
+  setSignal(Doorlock,1);
+  
+
+}
+

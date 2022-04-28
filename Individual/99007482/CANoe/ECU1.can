@@ -1,0 +1,26 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  int y;
+  message ECU1_Ack ack;
+}
+on message DoorlockStatus
+{
+  y = $Doorlock;
+  if(y == 1)
+  {
+    setSignal(Ack,0xAA);
+    output(ack);
+  }
+  else
+  {
+    setSignal(Ack,0x55);
+    output(ack);
+  }
+}
+
