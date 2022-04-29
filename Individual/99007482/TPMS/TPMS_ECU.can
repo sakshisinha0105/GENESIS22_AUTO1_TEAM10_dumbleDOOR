@@ -1,0 +1,108 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+variables
+{
+  timer Timer1;
+  timer Timer2;
+  message Sensor1Data msg1;
+  message Sensor2Data msg2;
+  int flp,frp,flt,frt,rlp,rrp,rlt,rrt;
+}
+
+on start
+{
+  write("Simluation has Started");
+}
+
+  
+on key 's'
+{
+  if(@Ignition::KL15==1)
+  {
+    @Ignition::KL15=0;
+  }
+  else
+  {
+    @Ignition::KL15=1;
+  }
+}
+
+on sysvar Ignition::KL15
+{
+  if(@Ignition::KL15==0)
+  {
+     write("Ignition is OFF");
+  }
+  else
+  {
+   write("Ignition is ON ");
+   setTimer(Timer1,5);
+   setTimer(Timer2,8);
+   output(msg1);
+   output(msg2);
+  }
+}
+on timer Timer1
+{
+  setSignal(FrontLeftTyrePressure,32);
+  setSignal(FrontRightTyrePressure,32);
+  setSignal(FrontLeftTyreTemp,70);
+  setSignal(FrontRightTypreTemp,70);
+}
+on timer Timer2
+{
+  setSignal(RearLeftTyrePressure,32);
+  setSignal(RearRightTyrePressure,32);
+  setSignal(RearLeftTyreTemp,70);
+  setSignal(RearRightTyreTemp,70);
+}
+on message Sensor1Data
+{
+ flp = $FrontLeftTyrePressure; 
+ frp = $FrontRightTyrePressure;
+ flt = $FrontLeftTyreTemp;
+ frt = $FrontRightTypreTemp;
+  if(flp>=28 && flp<=40 && flt>=55 && flt<=115)
+  {
+   write("Fine"); 
+  }
+  else
+  {
+   write("Not fine");
+  }
+   if(frp>=28 && frp<=40 && frt>=55 && frt<=115)
+  {
+   write("Fine"); 
+  }
+  else
+  {
+   write("Not fine");
+  }
+}
+on message Sensor2Data
+{
+ rlp = $RearLeftTyrePressure; 
+ rrp = $RearRightTyrePressure;
+ rlt = $RearLeftTyreTemp;
+ rrt = $RearRightTyreTemp; 
+  if(rlp>=28&&rlp<=40&&rlt>=55&&rlt<=115)
+  {
+   write("Fine"); 
+  }
+  else
+  {
+   write("Not fine");
+  }
+  if(rrp>=28&&rrp<=40&&rrt>=55&&rrt<=115)
+  {
+   write("Fine"); 
+  }
+  else
+  {
+   write("Not fine");
+  }
+}
+  

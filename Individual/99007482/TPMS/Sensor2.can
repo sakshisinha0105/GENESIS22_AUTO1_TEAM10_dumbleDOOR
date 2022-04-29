@@ -1,0 +1,35 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  timer Timer1;
+  message Sensor2Data msg1;
+  
+}
+on sysvar Ignition::KL15
+{
+  if(@Ignition::KL15==1)
+  {
+    write("Ignition is ON -Sensor1 is ON");
+    setTimer(Timer1,5);
+    output(msg1);
+  }
+  else
+  {
+    write("Ignition is OFF- Sensor1 is OFF");
+    cancelTimer(Timer1);
+  }
+}
+
+on timer Timer1
+{
+  output(msg1);
+  setTimer(Timer1,5);
+}
+
+
+
