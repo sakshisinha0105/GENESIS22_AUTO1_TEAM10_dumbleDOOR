@@ -10,17 +10,17 @@
 
 |S.NO|REQUIREMENTS|
 |----|------------|
-|HLR1 |Driver door lock button should  |
-|HLR2 |Doors should auto-lock when the car is moving at more than speed of 20km/h |
+|HLR1 |Ignition should be ON |
+|HLR2 |The car locking system should respond to the pressing of the button on the door |
+|HLR3 |Doors should auto-lock when the car is moving|
 
 ### LOW LEVEL REQUIREMENTS
 
 |S.NO|REQUIREMENTS|
 |----|--------------------|
-|LLR1.1 |Ignition should be ON |
-|LLR1.2 |A reciever takes the command to unlock/lock the doors |
-|LLR2.1 |Ignition should be ON |
-|LLR2.2 |The doors of the car should auto-lock when the car is moving at more than speed of 20km/h |
+|LLR1.1 |The car's engine should be on |
+|LLR1.2 |The button on the driver door should lock/unlock every doors in the car |
+|LLR2.1 |The doors of the car should auto-lock when the car is moving at more than speed of 20km/h |
 
 ## Market Analysis
 Key players in the market- Major players operating in the global Car Door Lock market include Standex International Corporation, Robert Bosch GmbH, Hirschmann Automotive GmbH, Sensata Technologies, Inc., HELLA GmbH & Co. KGaA, Hitachi Ltd., Mitsubishi Electric Corporation, DENSO CORPORATION, Johnson Electric, and Continental AG among others.
