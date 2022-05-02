@@ -1,0 +1,50 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  mstimer SpeedValue1;
+  timer SpeedValue2;
+  message CarSpeedValue msgvar;
+}
+
+on sysvar KL15::KL15
+{
+  if(@KL15::KL15 == 1)//ignition variable i/p is true
+  {
+    write("Vehicle ignition is ON --ECU3");
+    output(msgvar); //lesser than the threshold value
+    setTimer(SpeedValue1, 8000);
+    setTimer(SpeedValue2, 13);
+  }
+  
+  else
+  {
+    write("Vehicle ignition is OFF --ECU3");
+    $Speed= 0;//lesser than the threshold value
+    cancelTimer(SpeedValue1);
+    cancelTimer(SpeedValue2);  
+  }
+  
+}  
+  
+on timer SpeedValue1
+{
+ output(msgvar); 
+  setTimer(SpeedValue1,8000);
+}
+
+on timer SpeedValue2
+{
+ output(msgvar); 
+  setTimer(SpeedValue2,13);
+}
+
+
+on stopMeasurement
+{
+  $Speed= 0;
+}
