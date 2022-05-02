@@ -1,0 +1,45 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  timer SpeedValue1;
+  timer SpeedValue2;
+  message CarSpeed msg;
+}
+on sysvar Ignition::KL15
+{
+  if(@Ignition::KL15==1)
+  {
+    write("Ignition is ON");
+    output(msg);
+    setTimer(SpeedValue1,8);
+    setTimer(SpeedValue2,13);
+  }
+  else
+  {
+   write("Ignition is OFF"); 
+   $Speed = 0;
+   cancelTimer(SpeedValue1);
+   cancelTimer(SpeedValue2);
+  }
+}
+on timer SpeedValue1
+{
+  output(msg);
+  setTimer(SpeedValue1,8);
+}
+on timer SpeedValue2
+{
+  output(msg);
+  setTimer(SpeedValue2,13);
+}
+
+on stopMeasurement
+{
+  $Speed=0;
+}
+
