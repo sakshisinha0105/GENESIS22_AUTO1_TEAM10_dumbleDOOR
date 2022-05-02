@@ -9,24 +9,22 @@ AMAN SHARMA- 99007484
 
 |S.NO|REQUIREMENTS|
 |----|------------|
-|HLR1 |A transmitter - reciever module is required  |
-|HLR2 |A toggle switch is required to unlock/lock the doors |
-|HLR3 |Doors should auto-lock when the car is moving |
+|HLR1 |Driver door lock button should  |
+|HLR2 |Doors should auto-lock when the car is moving at more than speed of 20km/h |
 
 ### LOW LEVEL REQUIREMENTS
 
 |S.NO|REQUIREMENTS|
 |----|--------------------|
-|LLR1.1 |A transmitter gives the command to unlock/lock the doors. |
+|LLR1.1 |Ignition should be ON |
 |LLR1.2 |A reciever takes the command to unlock/lock the doors |
-|LLR2.1 |A toggle switch is required on the door to lock/unlock the doors of the car |
-|LLR3.1 |The doors of the car should auto-lock when the car is at a particular speed |
+|LLR2.1 |Ignition should be ON |
+|LLR2.2 |The doors of the car should auto-lock when the car is moving at more than speed of 20km/h |
 
 ## Market Analysis
-In 1911, Bosch started supplying ignition switches requiring a key. In 1980, Ford Motor Company introduced an external keypad-type keyless entry system, wherein the driver entered a numeric combination —either pre-programmed at the factory or one programmed by the owner— to unlock the car without the key. Early- to mid-1980s Nissan Maximas could also be installed with a keypad, which would also retract the windows and moonroof once the car was successfully unlocked by pushing a specific button on the keypad. During the 1990s the Subaru Legacy could also be opened by pulling the driver's external door handle a specific number of times to enter a passcode number that would unlock the driver's door only.
-Today, many cars with power door locks also have a radio frequency remote keyless system, which allows a person to press a button on a remote control key fob, the first being available on the French-made Renault Fuego in 1982. Currently, many luxury makers also allow the windows to be opened or closed by pressing and holding a button on the remote control key fob, or by inserting the ignition key and holding it in the lock or unlock position in the external driver's door lock.
-The remote locking system confirms successful locking and unlocking through either a light or a horn signal, and usually offers an option to switch easily between these two variants. Both provide almost the same functionality, though light signals are more discreet while horn signals might create a nuisance in residential neighborhoods and other busy parking areas (e.g. short-term parking lots). Some manufacturers offer the ability to adjust the horn signal volume.
-Other cars have a proximity system that is triggered if a keylike transducer (Advanced Key or handsfree) is within a certain distance of the car.
+Key players in the market- Major players operating in the global Car Door Lock market include Standex International Corporation, Robert Bosch GmbH, Hirschmann Automotive GmbH, Sensata Technologies, Inc., HELLA GmbH & Co. KGaA, Hitachi Ltd., Mitsubishi Electric Corporation, DENSO CORPORATION, Johnson Electric, and Continental AG among others.
+Globally, the Car Door Lock market is segmented by lock type, by distribution channel type, by vehicle type and by geographic coverage. Based on material type, the market is further segmented into manual and automatic. Automatic door locks or power locks are operated by using mechanical and electronic components. These are technically systematic locks that can be operated by remote control, and remote devices appear in the form of convenient compact battery-powered devices. Recent advances have led to the development and introduction of wearable remote-control devices that can be worn on the user’s wrist. Automatic door locks also have functions such as a central locking system. Most newer cars have a remote keyless system that can be controlled remotely using the remote-control key. When the gearbox is moved away from the "parking" position, the doors of some cars will lock. In other vehicles, when the vehicle reaches a certain speed, the door will automatically lock. These are one of some safety features that can cause people to prefer specific or specific car models. By distribution channel the market is segmented into OEM and aftermarket. The original equipment manufacturer (OEM) market segment is expected to lead the rare opportunity of vending machine lock sensor failure. In addition, the door lock sensor for the car needs to be replaced only in the event of a serious traffic accident. The slow pace of expansion of the aftermarket market is due to technological progress and increased awareness of vehicle users to maintain vehicle systems. By vehicle type the market is segmented into passenger cars, light commercial vehicles and heavy commercial vehicles. Passenger cars segment dominate the market over the forecast period. Increasing sale of passenger cars is one of the prime reasons for the dominance of car door lock over the forecast period. As more and more commercial vehicles are adopted worldwide, LCV has a considerable share. The booming logistics industry is increasing the demand for car door over the forecast period.
+
 
 ## TEST PLAN
 
