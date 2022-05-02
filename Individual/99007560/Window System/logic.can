@@ -1,0 +1,35 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  //timer Timer1;
+  //msTimer Timer2;
+  message Window_Module msg1;
+}
+
+on start
+{
+  write("Simulation has started");
+}
+
+on sysvar Ignition::KL15
+{
+  if(@Ignition::KL15==0)
+  {
+    write("Ignition is OFF");
+  }
+  else
+  {
+    write("Ignition is ON");
+    //setTimer(Timer1,5);
+    output(msg1);
+  }
+}
+
+
+  
+

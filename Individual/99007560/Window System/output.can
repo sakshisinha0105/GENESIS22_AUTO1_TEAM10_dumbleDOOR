@@ -1,0 +1,38 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  message ACK ACK1;//variable 
+  //OR
+  //message 0xAA ACK1;//variable
+  int retVal = 0;
+  const int POSITIVE_ACK = 0x55;  
+  const int NEGATIVE_ACK = 0xAA;
+}
+
+on message Window_Module//msg from ECU2
+{
+  if(($Power_Window == 1) && (@Ignition::KL15 == 1))
+  {
+    
+    ACK1.byte(0) = POSITIVE_ACK;//positive ack
+    output(ACK1);
+    
+  }
+  else
+  {
+    ACK1.byte(0) = NEGATIVE_ACK;//negative ack
+    output(ACK1);
+  }
+}
+
+
+on start{
+    write("in start - ECU1");
+   @Ignition::windO=0;  
+}
+
