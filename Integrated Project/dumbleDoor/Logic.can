@@ -1,0 +1,264 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  timer Timer1;
+  Timer Timer2;
+  message CarSpeed msg1;
+  message Window_Module msg2;
+  message logic_msg logi_msg;
+}
+ 
+on start
+{
+  write("Simluation has Started");
+}
+ 
+ 
+on sysvar Ignition::KL15
+{
+  if(@Ignition::KL15==0)
+  {
+    write("Ignition is OFF");
+  }
+  else
+  {
+    write("Ignition is ON ");
+    setTimer(Timer1,5);
+    output(msg1);
+  }
+}
+on message input_msg
+{
+  write("\n\nActivating the missile system:\n Battery level:\t\t",$battery);
+  write("\nMissile number:\t\t",$missile_no);
+}
+on sysvar system_status::sys_power
+{
+  write("Missile system is powered on");
+}
+
+on timer Timer1
+{
+  setSignal(Speed,8);
+  output(msg1);
+  setTimer(Timer2,5);
+}
+ 
+on timer Timer2
+{
+  $Speed=40;
+  setControlVisibility("SpeedPanel","Mirror",0);
+  setControlVisibility("SpeedPanel","DoorLock1",0);
+  output(msg1);
+  setTimer(Timer1,6);
+}
+on message output_msg
+{
+  write("Acknoledgement received");
+}
+
+on sysvar `switch::lock_sw 
+{
+  if( @system_status::sys_power == 1 )  //sys power on condition check
+  {
+    if ($c_sensor == 1) //collision detected
+    {
+      write("Missile system activation is aborted");
+      $missile_action_msg = 0;
+      output (logi_msg);
+      
+      setControlVisibility("missile_panel","collision",1);
+      
+      setControlVisibility("missile_panel","bt3",0);
+      setControlVisibility("missile_panel","bt1",1);
+      setControlVisibility("missile_panel","bt2",0);
+      
+      setControlVisibility("missile_panel","b1",1);
+      setControlVisibility("missile_panel","b2",1);
+      setControlVisibility("missile_panel","b3",1);
+      setControlVisibility("missile_panel","b4",1);
+      setControlVisibility("missile_panel","b5",1);  
+    }
+    else if( @`switch::lock_sw == 1 )  //missile position is locked 
+    {
+      write("\nMissile position is locked");
+      
+      if( ($c_sensor == 0) && ($battery > 20) && ($missile_no >0) ) //success condition
+      {
+        write("\n\nActivating the missile system:\n Battery level:\t\t",$battery);
+        write("\nMissile number:\t\t",$missile_no);
+        $missile_action_msg = 1;
+        output (logi_msg);
+        
+        setControlVisibility("missile_panel","collision",0);
+        
+        setControlVisibility("missile_panel","bt3",0);
+        setControlVisibility("missile_panel","bt1",1);
+        setControlVisibility("missile_panel","bt2",0);
+        
+        setControlVisibility("missile_panel","b1",1);
+        setControlVisibility("missile_panel","b2",1);
+        setControlVisibility("missile_panel","b3",1);
+        setControlVisibility("missile_panel","b4",1);
+        setControlVisibility("missile_panel","b5",1);
+      }
+      
+      else if( ($c_sensor == 0) && ($battery > 20) && ($missile_no == 0) ) //ABORT:no missile
+      {
+        write("\nMissile launch is aborted: NO MISSILES AVAILABLE");
+        $missile_action_msg = 0;
+        output (logi_msg);
+        
+        setControlVisibility("missile_panel","collision",0);
+        
+        setControlVisibility("missile_panel","b1",0);
+        setControlVisibility("missile_panel","b2",0);
+        setControlVisibility("missile_panel","b3",0);
+        setControlVisibility("missile_panel","b4",0);
+        setControlVisibility("missile_panel","b5",0);   
+        
+        setControlVisibility("missile_panel","bt3",0);
+        setControlVisibility("missile_panel","bt1",1);
+        setControlVisibility("missile_panel","bt2",0);
+      }
+      
+      else if( ($c_sensor == 0) && ($battery <20) && ($missile_no >0) ) //ABORT:less battery
+      {
+        write("\nMissile launch is aborted: NO sufficient battery power");
+        $missile_action_msg = 0;
+        output (logi_msg);
+        
+        setControlVisibility("missile_panel","collision",0);
+        
+        setControlVisibility("missile_panel","bt3",1);
+        setControlVisibility("missile_panel","bt1",0);
+        setControlVisibility("missile_panel","bt2",0);
+        
+        setControlVisibility("missile_panel","b1",1);
+        setControlVisibility("missile_panel","b2",1);
+        setControlVisibility("missile_panel","b3",1);
+        setControlVisibility("missile_panel","b4",1);
+        setControlVisibility("missile_panel","b5",1);  
+      } 
+      
+      else if( ($c_sensor == 0) && ($battery > 20 && 60 > $battery) && ($missile_no == 0) ) //mid level battery      
+      {
+        write("\nMissile launch is aborted: NO MISSILES AVAILABLE");
+        $missile_action_msg = 1;
+        output (logi_msg);
+        
+        setControlVisibility("missile_panel","collision",0);
+        
+        setControlVisibility("missile_panel","bt3",0);
+        setControlVisibility("missile_panel","bt1",0);
+        setControlVisibility("missile_panel","bt2",1);
+      
+        setControlVisibility("missile_panel","b1",1);
+        setControlVisibility("missile_panel","b2",1);
+        setControlVisibility("missile_panel","b3",1);
+        setControlVisibility("missile_panel","b4",1);
+        setControlVisibility("missile_panel","b5",1);        
+      }
+      
+      else if( ($c_sensor == 0) && ($battery > 20) && ($missile_no == 0) ) //ABORT:no missile
+      {
+        write("\nMissile launch is aborted: NO MISSILES AVAILABLE");
+        $missile_action_msg = 0;
+        output (logi_msg);
+        
+        setControlVisibility("missile_panel","collision",0);
+        
+        setControlVisibility("missile_panel","bt3",0);
+        setControlVisibility("missile_panel","bt1",0);
+        setControlVisibility("missile_panel","bt2",1);
+        
+        setControlVisibility("missile_panel","b1",1);
+        setControlVisibility("missile_panel","b2",1);
+        setControlVisibility("missile_panel","b3",1);
+        setControlVisibility("missile_panel","b4",1);
+        setControlVisibility("missile_panel","b5",1);   
+      }
+      
+      else if( (@`switch::lock_sw == 1) && (@`switch::launch_sw == 1) ) // missile launching
+      {
+        $missile_action_msg = 1;
+        $missile_no = $missile_no - 1 ;
+        output (logi_msg);       
+        
+        setControlVisibility("missile_panel","collision",0);
+        
+        setControlVisibility("missile_panel","bt3",0);
+        setControlVisibility("missile_panel","bt1",0);
+        setControlVisibility("missile_panel","bt2",1);
+      
+        if($missile_no == 5)
+        {
+          setControlVisibility("missile_panel","b1",1); 
+          setControlVisibility("missile_panel","b2",1);
+          setControlVisibility("missile_panel","b3",1);
+          setControlVisibility("missile_panel","b4",1);
+          setControlVisibility("missile_panel","b5",1); 
+        }
+        
+        if($missile_no == 4)
+        {
+          setControlVisibility("missile_panel","b1",1); 
+          setControlVisibility("missile_panel","b2",1);
+          setControlVisibility("missile_panel","b3",1);
+          setControlVisibility("missile_panel","b4",1);
+          setControlVisibility("missile_panel","b5",0); 
+        }
+        
+        if($missile_no == 3)
+        {
+          setControlVisibility("missile_panel","b1",1); 
+          setControlVisibility("missile_panel","b2",1);
+          setControlVisibility("missile_panel","b3",1);
+          setControlVisibility("missile_panel","b4",0);
+          setControlVisibility("missile_panel","b5",0); 
+        }
+        
+        if($missile_no == 2)
+        {
+          setControlVisibility("missile_panel","b1",1); 
+          setControlVisibility("missile_panel","b2",1);
+          setControlVisibility("missile_panel","b3",0);
+          setControlVisibility("missile_panel","b4",0);
+          setControlVisibility("missile_panel","b5",0); 
+        }
+        
+        if($missile_no == 1)
+        {
+          setControlVisibility("missile_panel","b1",1); 
+          setControlVisibility("missile_panel","b2",0);
+          setControlVisibility("missile_panel","b3",0);
+          setControlVisibility("missile_panel","b4",0);
+          setControlVisibility("missile_panel","b5",0); 
+        }
+        
+        if($missile_no == 0)
+        {
+          setControlVisibility("missile_panel","b1",0); 
+          setControlVisibility("missile_panel","b2",0);
+          setControlVisibility("missile_panel","b3",0);
+          setControlVisibility("missile_panel","b4",0);
+          setControlVisibility("missile_panel","b5",0);
+        }
+        
+      }
+    } 
+  } 
+
+  else
+  {
+   write("\nSystem is not powered on");
+   output(logi_msg);
+   $missile_action_msg = 0;
+  }
+  
+}

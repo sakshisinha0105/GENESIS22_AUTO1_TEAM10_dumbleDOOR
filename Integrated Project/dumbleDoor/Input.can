@@ -1,0 +1,236 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  timer SpeedValue1;
+  timer SpeedValue2;
+  message CarSpeed msg;
+  timer WindowGlassValue1;
+  timer WindowGlassValue2;
+  timer WindowGlassValue3;
+  timer WindowGlassValue4;
+  timer WindowGlassValue5;
+  timer WindowGlassValue6;
+  timer WindowGlassValue7;
+  timer WindowGlassValue8;
+  msTimer t1;
+  int x=0;
+  message input_msg lock_msg;
+  message Window_Module msg1;
+}
+on sysvar Ignition::KL15
+{
+  if(@Ignition::KL15==1 && @Ignition::windowStart==1)
+  {
+    write("Ignition is ON");
+    output(msg);
+    setTimer(SpeedValue1,5);
+    setTimer(SpeedValue2,6);
+    output(msg1);
+    setTimer(WindowGlassValue1,7);
+    setTimer(WindowGlassValue2,8);
+    setTimer(WindowGlassValue3,9);
+    setTimer(WindowGlassValue4,10);
+    setTimer(WindowGlassValue5,10);
+    setTimer(WindowGlassValue6,11);
+    setTimer(WindowGlassValue7,12);
+    setTimer(WindowGlassValue8,13);
+  }
+  else
+  {
+   write("Ignition is OFF"); 
+   $Speed = 0;
+   cancelTimer(SpeedValue1);
+   cancelTimer(SpeedValue2);
+   $Power_Window = 0;
+   cancelTimer(WindowGlassValue1);
+   cancelTimer(WindowGlassValue2);
+   cancelTimer(WindowGlassValue3);
+   cancelTimer(WindowGlassValue4);
+   cancelTimer(WindowGlassValue5);
+   cancelTimer(WindowGlassValue6);
+   cancelTimer(WindowGlassValue7);
+   cancelTimer(WindowGlassValue8); 
+  }
+}
+on sysvar system_status::sys_power
+{
+  if(@system_status::sys_power==0)
+  {
+    write("The missile system is powered OFF:");
+    cancelTimer(t1);
+    
+  }
+  else
+  {
+    write("The missile system is powered ON"); 
+    setTimer(t1,500);
+  }
+}
+on sysvar `switch::lock_sw
+{
+  if(@`switch::lock_sw == 0)
+  {
+    write("The missile position is not locked");
+  }
+  else
+  {
+    write("The missile position is locked");
+  }
+}
+
+on sysvar `switch::launch_sw
+{
+  if(@`switch::launch_sw == 0)
+  {
+    write("The missile is not launched");
+  }
+  else
+  {
+    write("The missile is launched");
+  }
+}
+on timer SpeedValue1
+{
+  output(msg);
+  setTimer(SpeedValue1,5);
+}
+on timer SpeedValue2
+{
+  output(msg);
+  setTimer(SpeedValue2,6);
+}
+
+on timer WindowGlassValue1
+{
+  output(msg);
+  @Ignition::windO=25;
+  setTimer(WindowGlassValue1,7);
+}
+on timer WindowGlassValue2
+{
+  output(msg);
+  @Ignition::windO=50;
+  setTimer(WindowGlassValue2,8);
+}
+
+on timer WindowGlassValue3
+{
+  output(msg);
+  @Ignition::windO=75;
+  setTimer(WindowGlassValue3,9);
+}
+on timer WindowGlassValue4
+{
+  output(msg);
+  @Ignition::windO=100;
+  setTimer(WindowGlassValue4,10);
+}
+on timer WindowGlassValue5
+{
+  output(msg);
+  @Ignition::windO=75;
+  setTimer(WindowGlassValue5,11);
+}
+on timer WindowGlassValue6
+{
+  output(msg);
+  @Ignition::windO=50;
+  setTimer(WindowGlassValue6,12);
+}
+on timer WindowGlassValue7
+{
+  output(msg);
+  @Ignition::windO=25;
+  setTimer(WindowGlassValue7,13);
+}
+on timer WindowGlassValue8
+{
+  output(msg);
+  @Ignition::windO =0;
+  setTimer(WindowGlassValue8,14);
+}
+on timer t1
+{ 
+  if(x==0) // functioning system - work
+  {
+    setSignal(c_sensor ,0);
+    setSignal(battery,60);
+    setSignal(missile_no,5);
+    output(lock_msg);
+    x=1;
+  }
+  else if(x==1) //less battery - abort
+  {
+    setSignal(c_sensor ,0);
+    setSignal(battery,10);
+    setSignal(missile_no,5);
+    output(lock_msg);
+    x=2;
+  }
+    else if(x==2) // less missile number - alert
+  {
+    setSignal(c_sensor ,0);
+    setSignal(battery,60);
+    setSignal(missile_no,2);
+    output(lock_msg);
+    x=1;
+  }
+    else if(x==3) //no missile - abort
+  {
+    setSignal(c_sensor ,0);
+    setSignal(battery,60);
+    setSignal(missile_no,0);
+    output(lock_msg);
+    x=1;
+  } 
+    else if(x==4) // collision detected - abort
+  {
+    setSignal(c_sensor ,1);
+    setSignal(battery,60);
+    setSignal(missile_no,5);
+    output(lock_msg);
+    x=5;
+  }
+    else if(x==5) //collision & less battery --> abort or not
+  {
+    setSignal(c_sensor ,1);
+    setSignal(battery,20);
+    setSignal(missile_no,5);
+    output(lock_msg);
+    x=6;
+  }
+    else if(x==6) //collision & no missile
+  {
+    setSignal(c_sensor ,1);
+    setSignal(battery,20);
+    setSignal(missile_no,0);
+    output(lock_msg);
+    x=7;
+  }
+    else if(x==7) //collision & less missile
+  {
+    setSignal(c_sensor ,1);
+    setSignal(battery,60);
+    setSignal(missile_no,2);
+    output(lock_msg);
+    x=0;
+  }
+  
+}
+
+on stopMeasurement
+{
+  $Speed=0;
+
+
+
+  $Power_Window=0;
+}
+
+
+

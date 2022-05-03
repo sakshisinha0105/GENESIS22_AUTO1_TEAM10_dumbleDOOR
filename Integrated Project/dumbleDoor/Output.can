@@ -1,0 +1,93 @@
+/*@!Encoding:1252*/
+includes
+{
+  
+}
+
+variables
+{
+  message ACK ACK1;
+  int retVal =0;
+  const int POS_ACK = 0x55;
+  const int NEG_ACK = 0xAA;
+  message output_msg out_msg; 
+  
+}
+on message MirrorFold
+{
+  if($MirrorFoldSignal==1 && @Ignition::KL15 ==1)
+  {
+   
+    write("Windows unfolded");
+    ACK1.byte(0) = POS_ACK;
+    output(ACK1);
+    setControlVisibility("SpeedPanel","Mirror",1);
+  }
+  else
+  {
+    write("Windows folded");
+    ACK1.byte(0) = NEG_ACK;
+    output(ACK1);
+    setControlVisibility("SpeedPanel","Mirror",0);
+  }
+}
+
+on message DoorLockStatus//msg from ECU2
+{
+  if(($DoorLock == 1) && (@Ignition::KL15 == 1))
+  {
+    //Doors lock mechanism code
+    write("DOORS Locked by Body Electronics ECU"); 
+    ACK1.byte(0) = POS_ACK;//positive ack
+    output(ACK1);
+    setControlVisibility("SpeedPanel","DoorLock1",0);
+  }
+  else
+  {
+    write("DOORS not locked by Body Elec ECU");
+    ACK1.byte(0) = NEG_ACK;//negative ack
+    output(ACK1);
+    setControlVisibility("SpeedPanel","DoorLock1",1);
+  }
+}
+on message Window_Module//msg from ECU2
+{
+  if(($Power_Window == 1) && (@Ignition::KL15 == 1))
+  {
+    
+    ACK1.byte(0) = POS_ACK;//positive ack
+    output(ACK1);
+    
+  }
+  else
+  {
+    ACK1.byte(0) = NEG_ACK;//negative ack
+    output(ACK1);
+  }
+}
+on message logic_msg
+{
+  $ack_msg = 1;
+  if( (@`switch::lock_sw == 1) && (@`switch::launch_sw == 1) && ($missile_action_msg == 1) && (@system_status::sys_power == 1) )
+  {
+    write("AIR COMPRESSOR INITIALIZED: MISSILE IS LAUNCHED");
+    write("Missile is firing\nNo of missiles available:\t\t",$missile_no);   
+    output(out_msg);
+  }
+  else if( (@`switch::lock_sw == 1) && (@`switch::launch_sw == 1) && ($missile_action_msg == 1 ) && (@system_status::sys_power == 1) )
+  {
+    write("\nMISSILE POSITION IS LOCKED: NOT LAUNCHED ");
+    output(out_msg);
+  }
+  else if( (@`switch::lock_sw == 1) && (@`switch::launch_sw == 1) && ($missile_action_msg == 0 ) && (@system_status::sys_power == 0) )
+  {
+    write("\nMISSILE LAUNCH IS ABORTED");
+    output(out_msg);
+  }
+}
+
+on start
+{
+  write("In Start - Output");
+  @Ignition::windO=0; 
+}
