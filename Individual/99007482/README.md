@@ -18,9 +18,17 @@ LOW LEVEL REQUIREMENTS
 |4 |HLR2 |It should only work when the vehicle is ON |
 
 # Market Analysis
-A side-view mirror also known as a wing mirror, is a mirror placed on the exterior of motor vehicles for the purposes of helping the driver see areas behind and to the sides of the vehicle, outside the driver's peripheral vision. 
-The side mirror is equipped for manual or remote vertical and horizontal adjustment so as to provide adequate coverage to drivers of differing height and seated position.
-Over the years, the mirror has been transformed from manual control to electronic control. Earlier the vehicle had manual control which had a joystick to adjust the blind spot and the mirror can be folded manually.
+
+## History Of Side Mirror
+
+In the early 1940s, the roads in Europe were unpaved and consist of two lanes. Each lane for one direction. Due to this, there was a huge complexity in traffic signals for the drivers as they have to look back and both sides to avoid a major accident. Hence the OEMs came up with the idea of implementing the rear mirror placed inside the vehicle. However, the side mirror was optional for the users as it was expensive those days.  
+
+## Progress of Side Mirror in Vehicles
+
+In the 1970s and 1980s, the side mirror were found in most of the vehicle and it was no longer a luxury as we witnessed in early 1940s. As things progressed, side mirror became a by default mandatory component of every vehicle. 
+Then in 2000, few of the automobile sectors came up with the idea of adjusting the mirror position as per the wish of the driver as earlier there was no specific function to change the view or angle of the mirror. With the advancement of technology, side mirror were later folded and unfolded using a manual joystick placed near the driver's staring wheel.
+
+In the modern time, mirrors come with the function of folding and unfolding using a electronic button and a touch sensor to change the view of the mirror. 
 After 2010, there were many vehicles which enabled the electronic button to fold and unfold the mirror once the vehicle is turned on. Later few vehicles also gave the touch screen at the driver door which enables them to adjust the view as per their requirements. Like in the Maruti Suzuki Swift, there was manual setting along with the joystick till 2015, later models however included the electronic folding system, however the mirror adjustment is still done manually by the person driving the vehicle
 Now it is an estimation that in upcoming years we can expect vehicle having intelligence sensor which will automatically detect the blind spot and adjust the mirror as per the driver without having any human intervention. In Tesla Model S, if you are driving for the first time, it asks about the personal information of the driver and next time it automatically sets the driver seat and side mirrors as the driver used it the last time used. 
 
