@@ -1,4 +1,3 @@
-
 ## REQUIREMENTS
 
 ### HIGH LEVEL REQUIREMEMTS
@@ -8,6 +7,8 @@
 |Sys_1|Requirement|Engine Should be in either IDLE condition or running|
 |Sys_2|Requirement|The electronic button should be by default at the centre i.e PAUSE|
 |Sys_3|Requirement|Either UP or DOWN button can be performed at an instant|
+|Sys_4|Requirement|The mirror cannot be folded or unfolded if ignition is OFF|
+|Sys_5|Requirement|The mirror will automatically unfold if the vehicle speed is above 40kmph|
 
 ### LOW LEVEL REQUIREMENTS
 
